@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace oop.products
 {
-    class Products
+   public class Products
     {
-        private string name, brand, stoktype;
+        private string name, brand,stoktype;
+     //   private bool stoktype;
         private double item_price, stock_amount;
         private static int product_ID;
 
@@ -24,6 +25,11 @@ namespace oop.products
             this.stock_amount = stock_amount;
             product_ID++;
         }*/
+        public int ID
+        {
+            get => product_ID;
+            set => product_ID = value;
+        }
         public string Name
         {
             get => name;
