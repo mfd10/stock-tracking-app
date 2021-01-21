@@ -101,8 +101,7 @@ namespace oop
             pro.StokType = row.Cells["stock_type"].Value.ToString();
             pro.Stock_Amount = Convert.ToDouble(row.Cells["stock_amount"].Value.ToString());
             pro.ID = row.Index+1;
-            MessageBox.Show(pro.ID.ToString()+ " "  + row.Index);
-            AddUpdateForm addUpdate = new AddUpdateForm(pro);
+                  AddUpdateForm addUpdate = new AddUpdateForm(pro);
             addUpdate.ShowDialog();
         }
 
