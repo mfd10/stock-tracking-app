@@ -1,0 +1,12 @@
+C:\Users\demir\source\repos\oop\oop\bin\Debug\oop.exe.config
+C:\Users\demir\source\repos\oop\oop\bin\Debug\oop.exe
+C:\Users\demir\source\repos\oop\oop\bin\Debug\oop.pdb
+C:\Users\demir\source\repos\oop\oop\obj\Debug\oop.csprojAssemblyReference.cache
+C:\Users\demir\source\repos\oop\oop\obj\Debug\oop.Crud.resources
+C:\Users\demir\source\repos\oop\oop\obj\Debug\oop.Form1.resources
+C:\Users\demir\source\repos\oop\oop\obj\Debug\oop.Properties.Resources.resources
+C:\Users\demir\source\repos\oop\oop\obj\Debug\oop.csproj.GenerateResource.cache
+C:\Users\demir\source\repos\oop\oop\obj\Debug\oop.csproj.CoreCompileInputs.cache
+C:\Users\demir\source\repos\oop\oop\obj\Debug\oop.exe
+C:\Users\demir\source\repos\oop\oop\obj\Debug\oop.pdb
+C:\Users\demir\source\repos\oop\oop\obj\Debug\oop.AddUpdateForm.resources
