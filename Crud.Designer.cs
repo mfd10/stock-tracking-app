@@ -30,12 +30,12 @@ namespace oop
         private void InitializeComponent()
         {
             this.searchBox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAll = new System.Windows.Forms.DataGridView();
             this.addBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAll)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBox
@@ -44,18 +44,18 @@ namespace oop
             this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBox.Location = new System.Drawing.Point(152, 79);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(570, 38);
+            this.searchBox.Size = new System.Drawing.Size(393, 38);
             this.searchBox.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridViewAll
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 138);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(674, 596);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridViewAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAll.Location = new System.Drawing.Point(48, 138);
+            this.dataGridViewAll.Name = "dataGridViewAll";
+            this.dataGridViewAll.RowHeadersWidth = 51;
+            this.dataGridViewAll.RowTemplate.Height = 24;
+            this.dataGridViewAll.Size = new System.Drawing.Size(674, 596);
+            this.dataGridViewAll.TabIndex = 1;
             // 
             // addBtn
             // 
@@ -77,6 +77,7 @@ namespace oop
             this.deleteBtn.TabIndex = 3;
             this.deleteBtn.Text = "DELETE PRODUCT";
             this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // updateBtn
             // 
@@ -108,12 +109,12 @@ namespace oop
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addBtn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewAll);
             this.Controls.Add(this.searchBox);
             this.Name = "Crud";
             this.Text = "crud";
             this.Load += new System.EventHandler(this.crud_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAll)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,7 +123,7 @@ namespace oop
         #endregion
 
         private System.Windows.Forms.TextBox searchBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewAll;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button updateBtn;
