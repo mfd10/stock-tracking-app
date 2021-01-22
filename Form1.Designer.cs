@@ -38,7 +38,7 @@ namespace oop
             this.coffeeBtn = new System.Windows.Forms.Button();
             this.snackBtn = new System.Windows.Forms.Button();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewResult = new System.Windows.Forms.DataGridView();
             this.twoBtn = new System.Windows.Forms.Button();
             this.tenBtn = new System.Windows.Forms.Button();
             this.fiftyBtn = new System.Windows.Forms.Button();
@@ -48,8 +48,15 @@ namespace oop
             this.resultBox = new System.Windows.Forms.TextBox();
             this.totalLabel = new System.Windows.Forms.Label();
             this.crudBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.reminderBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -131,22 +138,29 @@ namespace oop
             this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProducts.Location = new System.Drawing.Point(34, 125);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
+            this.dataGridViewProducts.ReadOnly = true;
             this.dataGridViewProducts.RowHeadersWidth = 51;
             this.dataGridViewProducts.RowTemplate.Height = 24;
+            this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducts.Size = new System.Drawing.Size(739, 526);
             this.dataGridViewProducts.TabIndex = 7;
+            this.dataGridViewProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducts_CellContentClick);
+            this.dataGridViewProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducts_CellDoubleClick);
             // 
-            // dataGridView2
+            // dataGridViewResult
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(1033, 160);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(316, 363);
-            this.dataGridView2.TabIndex = 8;
+            this.dataGridViewResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewResult.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewResult.Location = new System.Drawing.Point(1033, 160);
+            this.dataGridViewResult.Name = "dataGridViewResult";
+            this.dataGridViewResult.ReadOnly = true;
+            this.dataGridViewResult.RowHeadersWidth = 51;
+            this.dataGridViewResult.RowTemplate.Height = 24;
+            this.dataGridViewResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewResult.Size = new System.Drawing.Size(316, 363);
+            this.dataGridViewResult.TabIndex = 8;
+            this.dataGridViewResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewResult_CellContentClick);
             // 
             // twoBtn
             // 
@@ -157,6 +171,7 @@ namespace oop
             this.twoBtn.TabIndex = 9;
             this.twoBtn.Text = "200₺";
             this.twoBtn.UseVisualStyleBackColor = false;
+            this.twoBtn.Click += new System.EventHandler(this.twoBtn_Click);
             // 
             // tenBtn
             // 
@@ -167,6 +182,7 @@ namespace oop
             this.tenBtn.TabIndex = 10;
             this.tenBtn.Text = "10₺";
             this.tenBtn.UseVisualStyleBackColor = false;
+            this.tenBtn.Click += new System.EventHandler(this.tenBtn_Click);
             // 
             // fiftyBtn
             // 
@@ -177,6 +193,7 @@ namespace oop
             this.fiftyBtn.TabIndex = 12;
             this.fiftyBtn.Text = "50₺";
             this.fiftyBtn.UseVisualStyleBackColor = false;
+            this.fiftyBtn.Click += new System.EventHandler(this.fiftyBtn_Click);
             // 
             // twentyBtn
             // 
@@ -198,6 +215,7 @@ namespace oop
             this.fiveBtn.TabIndex = 14;
             this.fiveBtn.Text = "5₺";
             this.fiveBtn.UseVisualStyleBackColor = false;
+            this.fiveBtn.Click += new System.EventHandler(this.fiveBtn_Click);
             // 
             // hundredBtn
             // 
@@ -208,6 +226,7 @@ namespace oop
             this.hundredBtn.TabIndex = 13;
             this.hundredBtn.Text = "100₺";
             this.hundredBtn.UseVisualStyleBackColor = false;
+            this.hundredBtn.Click += new System.EventHandler(this.hundredBtn_Click);
             // 
             // resultBox
             // 
@@ -217,33 +236,114 @@ namespace oop
             this.resultBox.Name = "resultBox";
             this.resultBox.Size = new System.Drawing.Size(175, 45);
             this.resultBox.TabIndex = 16;
+            this.resultBox.TextChanged += new System.EventHandler(this.resultBox_TextChanged);
             // 
             // totalLabel
             // 
             this.totalLabel.AutoSize = true;
             this.totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLabel.Location = new System.Drawing.Point(1066, 525);
+            this.totalLabel.Location = new System.Drawing.Point(1060, 532);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(98, 38);
             this.totalLabel.TabIndex = 17;
             this.totalLabel.Text = "Total:";
+            this.totalLabel.Click += new System.EventHandler(this.totalLabel_Click);
             // 
             // crudBtn
             // 
             this.crudBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.crudBtn.Location = new System.Drawing.Point(49, 18);
+            this.crudBtn.Location = new System.Drawing.Point(1339, 745);
             this.crudBtn.Name = "crudBtn";
-            this.crudBtn.Size = new System.Drawing.Size(326, 42);
+            this.crudBtn.Size = new System.Drawing.Size(10, 10);
             this.crudBtn.TabIndex = 18;
             this.crudBtn.Text = "Products ";
             this.crudBtn.UseVisualStyleBackColor = false;
             this.crudBtn.Click += new System.EventHandler(this.crudBtn_Click);
             // 
+            // addBtn
+            // 
+            this.addBtn.Font = new System.Drawing.Font("Candara Light", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Location = new System.Drawing.Point(34, 657);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(231, 46);
+            this.addBtn.TabIndex = 19;
+            this.addBtn.Text = "ADD";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.Font = new System.Drawing.Font("Candara Light", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.Location = new System.Drawing.Point(276, 657);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(256, 46);
+            this.updateBtn.TabIndex = 20;
+            this.updateBtn.Text = "UPDATE";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Font = new System.Drawing.Font("Candara Light", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Location = new System.Drawing.Point(538, 657);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(235, 46);
+            this.deleteBtn.TabIndex = 21;
+            this.deleteBtn.Text = "DELETE";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            // 
+            // reminderBox
+            // 
+            this.reminderBox.BackColor = System.Drawing.Color.Linen;
+            this.reminderBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reminderBox.Location = new System.Drawing.Point(1174, 586);
+            this.reminderBox.Name = "reminderBox";
+            this.reminderBox.Size = new System.Drawing.Size(175, 45);
+            this.reminderBox.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(991, 589);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 38);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Reminder:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(827, 316);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 42);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Font = new System.Drawing.Font("Candara", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(279, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(201, 46);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "PRODUCTS";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 682);
+            this.ClientSize = new System.Drawing.Size(1354, 788);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.reminderBox);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.updateBtn);
+            this.Controls.Add(this.addBtn);
             this.Controls.Add(this.crudBtn);
             this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.resultBox);
@@ -253,7 +353,7 @@ namespace oop
             this.Controls.Add(this.fiftyBtn);
             this.Controls.Add(this.tenBtn);
             this.Controls.Add(this.twoBtn);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridViewResult);
             this.Controls.Add(this.dataGridViewProducts);
             this.Controls.Add(this.snackBtn);
             this.Controls.Add(this.coffeeBtn);
@@ -265,7 +365,7 @@ namespace oop
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,7 +381,7 @@ namespace oop
         private System.Windows.Forms.Button coffeeBtn;
         private System.Windows.Forms.Button snackBtn;
         private System.Windows.Forms.DataGridView dataGridViewProducts;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewResult;
         private System.Windows.Forms.Button twoBtn;
         private System.Windows.Forms.Button tenBtn;
         private System.Windows.Forms.Button fiftyBtn;
@@ -291,6 +391,13 @@ namespace oop
         private System.Windows.Forms.TextBox resultBox;
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Button crudBtn;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.TextBox reminderBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

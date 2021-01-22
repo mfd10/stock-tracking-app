@@ -39,9 +39,10 @@ namespace oop
             this.priceBox = new System.Windows.Forms.TextBox();
             this.brandBox = new System.Windows.Forms.TextBox();
             this.stockAmountBox = new System.Windows.Forms.TextBox();
-            this.stockTypeBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.packagedBtn = new System.Windows.Forms.RadioButton();
+            this.unpackagedBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +112,7 @@ namespace oop
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(222, 36);
             this.nameBox.TabIndex = 6;
+            this.nameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
             // 
             // priceBox
             // 
@@ -135,14 +137,6 @@ namespace oop
             this.stockAmountBox.Name = "stockAmountBox";
             this.stockAmountBox.Size = new System.Drawing.Size(222, 36);
             this.stockAmountBox.TabIndex = 9;
-            // 
-            // stockTypeBox
-            // 
-            this.stockTypeBox.Font = new System.Drawing.Font("Candara Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockTypeBox.Location = new System.Drawing.Point(315, 260);
-            this.stockTypeBox.Name = "stockTypeBox";
-            this.stockTypeBox.Size = new System.Drawing.Size(222, 36);
-            this.stockTypeBox.TabIndex = 10;
             // 
             // comboBox1
             // 
@@ -171,14 +165,37 @@ namespace oop
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // packagedBtn
+            // 
+            this.packagedBtn.AutoSize = true;
+            this.packagedBtn.Location = new System.Drawing.Point(325, 272);
+            this.packagedBtn.Name = "packagedBtn";
+            this.packagedBtn.Size = new System.Drawing.Size(92, 21);
+            this.packagedBtn.TabIndex = 13;
+            this.packagedBtn.TabStop = true;
+            this.packagedBtn.Text = "Packaged";
+            this.packagedBtn.UseVisualStyleBackColor = true;
+            // 
+            // unpackagedBtn
+            // 
+            this.unpackagedBtn.AutoSize = true;
+            this.unpackagedBtn.Location = new System.Drawing.Point(454, 272);
+            this.unpackagedBtn.Name = "unpackagedBtn";
+            this.unpackagedBtn.Size = new System.Drawing.Size(109, 21);
+            this.unpackagedBtn.TabIndex = 14;
+            this.unpackagedBtn.TabStop = true;
+            this.unpackagedBtn.Text = "Unpackaged";
+            this.unpackagedBtn.UseVisualStyleBackColor = true;
+            // 
             // AddUpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 527);
+            this.Controls.Add(this.unpackagedBtn);
+            this.Controls.Add(this.packagedBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.stockTypeBox);
             this.Controls.Add(this.stockAmountBox);
             this.Controls.Add(this.brandBox);
             this.Controls.Add(this.priceBox);
@@ -191,6 +208,7 @@ namespace oop
             this.Controls.Add(this.label1);
             this.Name = "AddUpdateForm";
             this.Text = "AddUpdateForm";
+            this.Load += new System.EventHandler(this.AddUpdateForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,8 +226,9 @@ namespace oop
         private System.Windows.Forms.TextBox priceBox;
         private System.Windows.Forms.TextBox brandBox;
         private System.Windows.Forms.TextBox stockAmountBox;
-        private System.Windows.Forms.TextBox stockTypeBox;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.RadioButton packagedBtn;
+        private System.Windows.Forms.RadioButton unpackagedBtn;
     }
 }

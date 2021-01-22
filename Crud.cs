@@ -33,5 +33,10 @@ namespace oop
             AddUpdateForm addUpdate = new AddUpdateForm();
             addUpdate.ShowDialog();
         }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            //delete product from excel
+        }
     }
 }
